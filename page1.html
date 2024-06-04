@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        .navbar {
+        padding: 10px !important;
+    }
+        .collapse a, button {
+            padding: 10px;
+            margin-left: 15px;
+        }
+        .custom-color {
+            background-color: rgb(176, 238, 232);
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg custom-color">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">My lovely girl</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="page1.html">Things I love about you</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="page2.html">Things I won't forget</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="page3.html">My message for you</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</nav>
+
+   <!-- Body -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="text-holder">
+                        <div class="text-body-holder">
+                            <div class="title justify-content-center d-flex" style="margin-top: 30px;"> 
+                                <h3>Things i love about you</h3>
+                            </div>
+                            <div class="body d-flex justify-content-center" style="text-align: justify; margin: 10px;">
+                                <p>Things I love about you, number one is the whole you baby! Your eyes, baby :< your hair, they small good hehe, your nose, so matangos baby, your lips, your smile you look so sweet baby when you smile, I WANT THEM TO KISS, YOUR CHEEKS HAHAHAHHAA DAMN THEY LOOK SO SOFT BABY!! i want to bite it hehehe. Plus baby, your hard working, the way you love me, the way you hug me, the way you lean on me, the way you lay on my chest on that first meet :< I miss it na baby :<. The way you hold my hand, the way you touch me, the way you pull your body to me HAHAHHAHAHAHHAA that makes me hard hehe HAHAHAHHAHAA I love those babyy, even the small things i notice na ginagawa mo? like the sending videos from tiktok hehe or ig reels, that makes me so important to you :< when you enjoy my presence, when you laugh so hard sa mga kinukwento ko, when you need me, and you appreciate my soul for being there for you :< all things that you are doing to me baby, I appreaciate those.</p>
+                            </div>
+                            <div class="body d-flex justify-content-center" style="text-align: justify; margin: 10px;">
+                                <p>More things I love about you is yung hardworking mo baby, yung kapag may idea ka sa bagay na gusto mo, ipupursue mo talaga to the point na kahit mapagod ka basta makuha mo siya, that, I love that baby, like I want a girl who just don't talk about their dreams, gusto ko rin yung kumikilos to make their dream happen, and that's you baby! Also baby I really love it when you tell me "alam mo ba love" that really makes me so special to you :< plus yung pag act mo as mom sakin hehe I really love it when you mad at me because of something I did bad HAHHAHAHAHAHAHAHA nagiging mommy hanna ang aking laloves HAHHAHAHAHAHAHA and ofcourse baby ikaw, i love you. I love you for being you baby, you don't have to change a thing lovie! All of things you're doing are all fine. One thing I see that I think need mo i-improve baby, is yung pag baby sakin, kasi you almost forget na eh :< Di mo na ako binaby unlike dati na pag tumahimik ako, binababy mo ako :< HAHHAHAHAHAHAHA Happyy Birthday my love!! Mahall na mahall ka ni Louie!! </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#messageState").on("change", function() {
+            $(".message").removeClass("openNor").removeClass("closeNor");
+            if ($("#messageState").is(":checked")) {
+                $(".message").removeClass("closed").removeClass("no-anim").addClass("openNor");
+                $(".heart").removeClass("closeHer").removeClass("openedHer").addClass("openHer");
+                $(".container").stop().animate({"backgroundColor": "#f48fb1"}, 2000);
+                console.log("Opening");
+            } else {
+                $(".message").removeClass("no-anim").addClass("closeNor");
+                $(".heart").removeClass("openHer").removeClass("openedHer").addClass("closeHer");
+                $(".container").stop().animate({"backgroundColor": "#fce4ec"}, 2000);
+                console.log("Closing");
+            }
+        });
+
+        $(".message").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+            console.log("Animation End");
+            if ($(".message").hasClass("closeNor"))
+                $(".message").addClass("closed");
+            $(".message").removeClass("openNor").removeClass("closeNor").addClass("no-anim");
+        });
+
+        $(".heart").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+            console.log("Animation End");
+            if (!$(".heart").hasClass("closeHer"))
+                $(".heart").addClass("openedHer").addClass("beating");
+            else
+                $(".heart").addClass("no-anim").removeClass("beating");
+            $(".heart").removeClass("openHer").removeClass("closeHer");
+        });
+    });
+</script>
+</body>
+</html>
